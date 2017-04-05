@@ -14,6 +14,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class FrontPageComponent implements OnInit {
   projects;
+  filterByFunding = "allProjects";
 
   constructor(private router: Router, private projectService:ProjectService) { }
 
@@ -22,10 +23,15 @@ export class FrontPageComponent implements OnInit {
       this.projects = dataLastEmittedFromObserver;
       console.log(this.projects);
     });
+    // this.projects = this.projectService.getProjects();
   }
 
   goToProject(id){
     this.router.navigate(['project-detail', id]);
+  }
+
+  onChange(optionFromMenu) {
+    this.filterByFunding = optionFromMenu;
   }
 
 }

@@ -10,6 +10,7 @@ import { AngularFireModule } from 'angularfire2';
 
 import { FrontPageComponent } from './front-page/front-page.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { FundinglvlPipe } from './fundinglvl.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -22,7 +23,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     FrontPageComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    FundinglvlPipe
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,14 @@
 <p>
   front-page works!
 </p>
+
+<select (change)="onChange($event.target.value)">
+  <option value="allProjects" selected="selected">All Projects</option>
+  <option value="fullyFunded">Fully Funded</option>
+  <option value="partiallyFunded">Partially Funded</option>
+  <option value="unfunded">Unfunded</option>
+</select>
+
 <ul>
-  <li *ngFor="let currentProject of projects" (click)="goToProject(currentProject.$key)">{{currentProject.name}}</li>
+  <li *ngFor="let currentProject of projects | fundinglvl:filterByFunding" (click)="goToProject(currentProject.$key)">{{currentProject.name}}</li>
 </ul>
