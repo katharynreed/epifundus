@@ -1,3 +1,6 @@
 <p>
   front-page works!
 </p>
+<ul>
+  <li *ngFor="let currentProject of projects" (click)="goToProject(currentProject.$key)">{{currentProject.name}}</li>
+</ul>

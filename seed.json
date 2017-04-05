@@ -1,0 +1,30 @@
+{
+  "projects":[
+    {
+      "name":"ProjA",
+      "lead":"Maggie",
+      "description":"Really Fancy Shit Here",
+      "fundingGoal":4500000,
+      "currentFunding":0,
+      "swag":"plushy bunnies",
+      "budgetDeets":"we will spend it all on hookers & blow"
+    },
+    {
+      "name":"ProjB",
+      "lead":"Beem",
+      "description":"Insert Some boilerplate Content",
+      "fundingGoal":25,
+      "currentFunding":0,
+      "swag":"good feelings",
+      "budgetDeets":"buy me a fancy cocktail"
+    },
+    {
+      "name":"Projc",
+      "lead":"Jeremiah",
+      "description":"Jay's Crack Emporium and Den of Iniquity",
+      "fundingGoal":350000,
+      "currentFunding":0,
+      "swag":"all the durgs you can soak up",
+      "budgetDeets":"yup, we got 'em"
+    }
+  ]}
