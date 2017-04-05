@@ -1,2 +1,9 @@
 <p>{{projectToDisplay?.name}}</p>
 <p>{{projectToDisplay?.description}}</p>
+
+<button (click)="donateClick()"> Donate Here </button>
+<div *ngIf="donateClicked">
+  <label id="showDonationForm">Donation Amount:</label>
+  <input #newDonation>
+  <button id="donationComplete" (click)="donationSendComplete(projectToDisplay, newDonation.value)">Send Donation</button>
+</div>

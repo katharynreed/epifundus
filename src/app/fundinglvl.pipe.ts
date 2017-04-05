@@ -24,9 +24,7 @@ export class FundinglvlPipe implements PipeTransform {
       }
       return output;
     } else if(desiredFundingLvl === "unfunded"){
-      console.log(input);
       for(var index = 0; index < input.length; index++) {
-        console.log("now we are here");
         if(input[index].currentFunding === 0){
           output.push(input[index]);
         }

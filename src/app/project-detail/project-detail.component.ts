@@ -15,6 +15,7 @@ import { FirebaseObjectObservable } from 'angularfire2';
 })
 
 export class ProjectDetailComponent implements OnInit {
+donateClicked = false;
 projectToDisplay;
 projectId;
 
@@ -31,6 +32,15 @@ projectId;
     });
   }
 
+  donateClick() {
+    this.donateClicked = true;
+  }
+
+  donationSendComplete(projectToUpdate, userAmount) {
+    var projectEntryInFirebase =
+    this.projectService.getProjectById(projectToUpdate.$key);
+    projectEntryInFirebase.update({currentFunding: projectToUpdate.currentFunding += userAmount });
+  }
 
 
 }
