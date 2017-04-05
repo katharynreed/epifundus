@@ -15,6 +15,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class FrontPageComponent implements OnInit {
   projects;
   filterByFunding = "allProjects";
+  newProjectClicked = false;
 
   constructor(private router: Router, private projectService:ProjectService) { }
 
@@ -32,6 +33,16 @@ export class FrontPageComponent implements OnInit {
 
   onChange(optionFromMenu) {
     this.filterByFunding = optionFromMenu;
+  }
+
+  showNewProjectForm(){
+    this.newProjectClicked = true;
+  }
+
+  submitNewProject(newName, newLead, newDescription, newFundingGoal, newSwag, newBudgetDeets){
+    var newProject = new Project(newName, newLead, newDescription, newFundingGoal, 0, newSwag, newBudgetDeets);
+    this.projectService.addProject(newProject);
+    this.newProjectClicked = false;
   }
 
 }

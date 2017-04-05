@@ -12,3 +12,20 @@
 <ul>
   <li *ngFor="let currentProject of projects | fundinglvl:filterByFunding" (click)="goToProject(currentProject.$key)">{{currentProject.name}}</li>
 </ul>
+
+<button (click)="showNewProjectForm()">Add a Project</button>
+<div *ngIf="newProjectClicked">
+  <label>New Project Name:</label>
+  <input #newName><br>
+  <label>Project Lead:</label>
+  <input #newLead><br>
+  <label>Description:</label>
+  <input #newDescription><br>
+  <label>Funding Goal:</label>
+  <input #newFundingGoal><br>
+  <label>Swag</label>
+  <input #newSwag><br>
+  <label>Budget Details</label>
+  <input #newBudgetDeets><br>
+  <button (click)="submitNewProject(newName.value, newLead.value, newDescription.value, newFundingGoal.value, newSwag.value, newBudgetDeets.value); newName.value=''; newLead.value=''; newDescription.value=''; newFundingGoal.value=''; newSwag.value=''; newBudgetDeets.value='';">Submit New Project</button>
+</div>
