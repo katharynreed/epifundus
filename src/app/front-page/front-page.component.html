@@ -1,7 +1,3 @@
-<p>
-  front-page works!
-</p>
-
 <select (change)="onChange($event.target.value)">
   <option value="allProjects" selected="selected">All Projects</option>
   <option value="fullyFunded">Fully Funded</option>
@@ -10,7 +6,10 @@
 </select>
 
 <ul>
-  <li *ngFor="let currentProject of projects | fundinglvl:filterByFunding" (click)="goToProject(currentProject.$key)">{{currentProject.name}}</li>
+  <div class="well" *ngFor="let currentProject of projects | fundinglvl:filterByFunding" (click)="goToProject(currentProject.$key)">
+  <h3>{{currentProject.name}}</h3>
+  <h5>Project Lead: {{currentProject.lead}}</h5>
+  </div>
 </ul>
 
 <button (click)="showNewProjectForm()">Add a Project</button>
@@ -27,5 +26,5 @@
   <input #newSwag><br>
   <label>Budget Details</label>
   <input #newBudgetDeets><br>
-  <button (click)="submitNewProject(newName.value, newLead.value, newDescription.value, newFundingGoal.value, newSwag.value, newBudgetDeets.value); newName.value=''; newLead.value=''; newDescription.value=''; newFundingGoal.value=''; newSwag.value=''; newBudgetDeets.value='';">Submit New Project</button>
+  <button class="btn btn-xs" (click)="submitNewProject(newName.value, newLead.value, newDescription.value, newFundingGoal.value, newSwag.value, newBudgetDeets.value); newName.value=''; newLead.value=''; newDescription.value=''; newFundingGoal.value=''; newSwag.value=''; newBudgetDeets.value='';">Submit New Project</button>
 </div>

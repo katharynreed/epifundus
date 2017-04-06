@@ -36,10 +36,29 @@ projectId;
     this.donateClicked = true;
   }
 
+  funded(projectToDisplay){
+    if (projectToDisplay.fundingGoal === projectToDisplay.currentFunding){
+      return "bg-success";
+    } else if (projectToDisplay.currentFunding > projectToDisplay.fundingGoal) {
+      return "bg-primary";
+    } else if ((projectToDisplay.currentFunding < projectToDisplay.fundingGoal) && (projectToDisplay.currentFunding > 0)){
+      return "bg-warning";
+    } else {
+     return "bg-danger";
+    }
+  }
+
   donationSendComplete(projectToUpdate, userAmount) {
-    var projectEntryInFirebase =
-    this.projectService.getProjectById(projectToUpdate.$key);
-    projectEntryInFirebase.update({currentFunding: projectToUpdate.currentFunding += userAmount });
+    if (userAmount < 0) {
+      alert("Emezzlement is an actual illegal activity. Please don't.")
+    } else {
+      let reallyCurrentFunding: number = projectToUpdate.currentFunding;
+      reallyCurrentFunding += parseInt(userAmount);
+      var projectEntryInFirebase =
+      this.projectService.getProjectById(projectToUpdate.$key);
+      projectEntryInFirebase.update({currentFunding: reallyCurrentFunding});
+      this.donateClicked = false;
+    }
   }
 
 

@@ -1,9 +1,20 @@
-<p>{{projectToDisplay?.name}}</p>
-<p>{{projectToDisplay?.description}}</p>
+<div class="row">
+  <div class="col-md-6">
+    <h2>{{projectToDisplay?.name}}</h2>
+    <h4>Project Lead: {{projectToDisplay?.lead}}</h4>
+    <h6>Description: {{projectToDisplay?.description}}</h6>
 
-<button (click)="donateClick()"> Donate Here </button>
+  </div>
+  <div class="col-md-6">
+    <h4>Funding Goal: {{projectToDisplay?.fundingGoal | currency:'USD':true}}</h4>
+    <h4>Current Funding: <span [class]="funded(projectToDisplay)">{{projectToDisplay?.currentFunding | currency:'USD':true}}</span></h4>
+    <h5>Budget Details: {{projectToDisplay.budgetDeets}}</h5>
+  </div>
+</div>
+
+<button class="btn btn-lg"(click)="donateClick()"> Donate Here </button>
 <div *ngIf="donateClicked">
   <label id="showDonationForm">Donation Amount:</label>
-  <input #newDonation>
-  <button id="donationComplete" (click)="donationSendComplete(projectToDisplay, newDonation.value)">Send Donation</button>
+  <input type="number" #newDonation>
+  <button class="btn btn-xs" id="donationComplete" (click)="donationSendComplete(projectToDisplay, newDonation.value)">Send Donation</button>
 </div>
