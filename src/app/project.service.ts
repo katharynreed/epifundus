@@ -23,4 +23,14 @@ export class ProjectService {
     return this.angularFire.database.object('projects/' + projectId);
   }
 
+  updateProject(projectToDisplay, newName, newLead, newDescription, newFundingGoal, newSwag, newBudgetDeets){
+    var projectEntryInFirebase = this.getProjectById(projectToDisplay.$key);
+    projectEntryInFirebase.update({name: newName, lead: newLead, description: newDescription, fundingGoal: newFundingGoal, swag: newSwag, budgetDeets: newBudgetDeets});
+  }
+
+  deleteProject(projectToDelete) {
+    let projectEntryInFirebase = this.getProjectById(projectToDelete.$key);
+    projectEntryInFirebase.remove();
+  }
+
 }

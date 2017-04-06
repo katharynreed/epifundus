@@ -18,3 +18,22 @@
   <input type="number" #newDonation>
   <button class="btn btn-xs" id="donationComplete" (click)="donationSendComplete(projectToDisplay, newDonation.value)">Send Donation</button>
 </div>
+
+<button class="btn btn-lg"(click)="editClick()">Edit Project</button>
+<div *ngIf="editClicked">
+  <label>Project Name:</label>
+  <input #newName value={{projectToDisplay.name}}><br>
+  <label>Project Lead:</label>
+  <input #newLead value={{projectToDisplay.lead}}><br>
+  <label>Description:</label>
+  <input #newDescription value={{projectToDisplay.description}}><br>
+  <label>Funding Goal:</label>
+  <input #newFundingGoal value={{projectToDisplay.fundingGoal}}><br>
+  <label>Swag</label>
+  <input #newSwag value={{projectToDisplay.swag}}><br>
+  <label>Budget Details</label>
+  <input #newBudgetDeets value={{projectToDisplay.budgetDeets}}><br>
+  <button class="btn btn-xs" (click)="updateProject(newName.value, newLead.value, newDescription.value, newFundingGoal.value, newSwag.value, newBudgetDeets.value); newName.value=''; newLead.value=''; newDescription.value=''; newFundingGoal.value=''; newSwag.value=''; newBudgetDeets.value='';">Update Project</button>
+</div>
+
+<button class="btn btn-lg" (click)="beginDeletingProject()">Delete</button>

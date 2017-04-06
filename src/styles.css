@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  text-align: center;
+  background-color: #A1FCDF !important;
+}
+
+hr {
+  max-width: 600px;
+}
+
+.btn {
+ background-color: #214541;
+ color: white!important;
+}
+
+.well:hover{
+  background-image: url(http://bestanimations.com/Money/money-animated-gif-4.gif);
+  color: white;
+}
+
+.btn:hover {
+  background-image: url(http://bestanimations.com/Money/money-animated-gif-4.gif);
+  color: white;
+}
+
+.btn-xs:hover {
+  background-image: url(http://orig05.deviantart.net/1256/f/2011/156/c/5/raining_gold_by_aparks45-d3i5zpf.gif);
+}
+
+.btn-lg:hover {
+  color: white !important;
+}

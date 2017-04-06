@@ -1,5 +1,6 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 

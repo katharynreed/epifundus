@@ -1,4 +1,4 @@
-<select (change)="onChange($event.target.value)">
+<select class="btn" (change)="onChange($event.target.value)">
   <option value="allProjects" selected="selected">All Projects</option>
   <option value="fullyFunded">Fully Funded</option>
   <option value="partiallyFunded">Partially Funded</option>
@@ -12,7 +12,7 @@
   </div>
 </ul>
 
-<button (click)="showNewProjectForm()">Add a Project</button>
+<button class="btn" (click)="showNewProjectForm()">Add a Project</button>
 <div *ngIf="newProjectClicked">
   <label>New Project Name:</label>
   <input #newName><br>
